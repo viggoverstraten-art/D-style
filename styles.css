@@ -118,6 +118,10 @@ button { font:inherit; cursor:pointer; background:none; border:none; }
 .nav.solid .nav__links a:hover { color:var(--espresso); }
 
 .nav__cta { margin-left:2.5rem; }
+.nav.solid .nav__cta {
+  color:var(--espresso); border-color:var(--espresso);
+}
+.nav.solid .nav__cta:hover { background:var(--espresso); color:var(--cream); }
 
 .nav__burger {
   display:none; flex-direction:column; gap:5px;

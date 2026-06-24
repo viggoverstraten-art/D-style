@@ -503,9 +503,112 @@ button { font:inherit; cursor:pointer; background:none; border:none; }
   color:var(--taupe); transition:color .3s;
 }
 .footer__nav a:hover { color:var(--cream); }
+.footer__legal { margin-left:auto; }
 .footer__copy {
-  margin-left:auto; font-size:.68rem;
+  font-size:.68rem;
   letter-spacing:.06em; color:var(--taupe);
+}
+
+/* ─── COOKIE BAR ────────────────────────────── */
+.cookie-bar {
+  position:fixed; inset:auto 0 0;
+  background:var(--cream-alt);
+  border-top:1px solid var(--sand-light);
+  padding:1.25rem var(--px);
+  z-index:200;
+  transform:translateY(100%);
+  transition:transform .45s var(--ease);
+}
+.cookie-bar.visible { transform:none; }
+.cookie-bar__inner {
+  max-width:var(--max); margin:0 auto;
+  display:flex; align-items:center;
+  flex-wrap:wrap; gap:1rem 2rem;
+}
+.cookie-bar__txt {
+  flex:1; min-width:220px;
+  font-size:.8rem; color:var(--taupe); line-height:1.55;
+}
+.cookie-bar__txt a {
+  color:var(--espresso); border-bottom:1px solid var(--sand);
+  padding-bottom:1px; transition:border-color .2s;
+}
+.cookie-bar__txt a:hover { border-color:var(--espresso); }
+.cookie-bar__btns {
+  display:flex; align-items:center; gap:1rem; flex-shrink:0;
+}
+.cookie-bar__decline {
+  font-size:.7rem; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--taupe); background:none; border:none;
+  padding:.5rem 0; cursor:pointer;
+  border-bottom:1px solid transparent;
+  transition:color .2s, border-color .2s;
+}
+.cookie-bar__decline:hover { color:var(--espresso); border-color:var(--taupe); }
+
+/* ─── LEGAL PAGES ───────────────────────────── */
+.legal-back {
+  margin-left:auto;
+  font-size:.7rem; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--taupe); transition:color .2s;
+}
+.legal-back:hover { color:var(--espresso); }
+
+.legal {
+  padding-top:calc(var(--nav-h) + 3rem);
+  padding-bottom:5rem;
+  min-height:80vh;
+}
+.legal__inner {
+  max-width:720px; margin:0 auto; padding:0 var(--px);
+}
+.legal__h1 {
+  font-size:clamp(2.4rem,6vw,4rem);
+  color:var(--espresso); margin-top:.75rem; margin-bottom:.5rem;
+}
+.legal__intro {
+  font-size:.78rem; color:var(--taupe); letter-spacing:.05em;
+  margin-bottom:3rem; padding-bottom:2rem;
+  border-bottom:1px solid var(--sand-light);
+}
+
+.legal__body { display:flex; flex-direction:column; gap:0; }
+.legal__body h2 {
+  font-family:var(--font-d); font-size:1.35rem; font-weight:400;
+  color:var(--espresso); margin-top:2.5rem; margin-bottom:.6rem;
+}
+.legal__body h3 {
+  font-family:var(--font-b); font-size:.78rem; font-weight:500;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--taupe);
+  margin-top:1.8rem; margin-bottom:.5rem;
+}
+.legal__body p {
+  font-size:.9rem; color:#3a3330; line-height:1.75;
+  margin-bottom:.9rem;
+}
+.legal__body ul {
+  margin:.2rem 0 .9rem 1.2rem;
+}
+.legal__body li {
+  font-size:.9rem; color:#3a3330; line-height:1.75; margin-bottom:.3rem;
+}
+.legal__body a {
+  color:var(--espresso); border-bottom:1px solid var(--sand);
+  padding-bottom:1px; transition:border-color .2s;
+}
+.legal__body a:hover { border-color:var(--espresso); }
+.legal__body table {
+  width:100%; border-collapse:collapse;
+  margin:1rem 0 1.5rem; font-size:.82rem;
+}
+.legal__body th {
+  text-align:left; padding:.6rem .8rem;
+  background:var(--sand-light); color:var(--espresso);
+  font-weight:400; letter-spacing:.04em;
+}
+.legal__body td {
+  padding:.55rem .8rem; color:#3a3330;
+  border-bottom:1px solid var(--sand-light);
 }
 
 /* ─── REVEAL ─────────────────────────────────── */
@@ -559,7 +662,11 @@ button { font:inherit; cursor:pointer; background:none; border:none; }
   }
   .gi { grid-column:auto !important; grid-row:auto !important; }
   .gi:nth-child(1) { grid-column:1/3 !important; }
-  .footer__copy { margin-left:0; }
+  .footer__legal { margin-left:0; }
+  .footer__copy  { margin-left:0; }
+}
+@media (max-width:500px) {
+  .cookie-bar__inner { flex-direction:column; align-items:flex-start; }
 }
 @media (max-width:500px) {
   .hero__ctas { flex-direction:column; align-items:flex-start; }

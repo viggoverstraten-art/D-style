@@ -46,3 +46,24 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('[data-r]').forEach(el => io.observe(el));
+
+// Cookie consent
+(function () {
+  const bar     = document.getElementById('cookieBar');
+  if (!bar) return;
+  const KEY     = 'dstyle_cookie_consent';
+
+  function dismiss(value) {
+    localStorage.setItem(KEY, value);
+    bar.classList.remove('visible');
+    bar.addEventListener('transitionend', () => bar.hidden = true, { once: true });
+  }
+
+  if (!localStorage.getItem(KEY)) {
+    bar.hidden = false;
+    requestAnimationFrame(() => requestAnimationFrame(() => bar.classList.add('visible')));
+  }
+
+  document.getElementById('cookieAccept') .addEventListener('click', () => dismiss('accepted'));
+  document.getElementById('cookieDecline').addEventListener('click', () => dismiss('necessary'));
+})();

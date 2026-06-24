@@ -507,9 +507,16 @@ button { font:inherit; cursor:pointer; background:none; border:none; }
   color:var(--taupe); transition:color .3s;
 }
 .footer__nav a:hover { color:var(--cream); }
-.footer__legal { margin-left:auto; }
+.footer__addr {
+  font-style:normal; font-size:.68rem;
+  color:var(--taupe); letter-spacing:.04em; line-height:1.9;
+  margin-left:auto;
+}
+.footer__addr a { color:var(--taupe); transition:color .3s; }
+.footer__addr a:hover { color:var(--cream); }
+.footer__legal { width:100%; padding-top:1rem; border-top:1px solid rgba(255,255,255,.07); }
 .footer__copy {
-  font-size:.68rem;
+  font-size:.68rem; margin-left:auto;
   letter-spacing:.06em; color:var(--taupe);
 }
 
@@ -674,6 +681,7 @@ button { font:inherit; cursor:pointer; background:none; border:none; }
   }
   .gi { grid-column:auto !important; grid-row:auto !important; }
   .gi:nth-child(1) { grid-column:1/3 !important; }
+  .footer__addr  { margin-left:0; }
   .footer__legal { margin-left:0; }
   .footer__copy  { margin-left:0; }
 }

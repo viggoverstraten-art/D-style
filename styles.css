@@ -184,7 +184,7 @@ button { font:inherit; cursor:pointer; background:none; border:none; }
   color:rgba(255,255,255,.88); margin-bottom:1.2rem;
 }
 .hero__h1 {
-  font-size:clamp(3.8rem,10vw,8.5rem); color:#fff; max-width:11ch;
+  font-size:clamp(3.8rem,10vw,6rem); color:#fff; max-width:11ch;
   line-height:.92;
 }
 .hero__sub {
@@ -665,7 +665,7 @@ button { font:inherit; cursor:pointer; background:none; border:none; }
 @media (min-width:768px) and (max-width:960px) {
   .nav__links { gap:1.4rem; }
   .nav__cta   { display:none; }
-  .hero__h1   { font-size: clamp(5rem, 12vw, 7rem); }
+  .hero__h1   { font-size: clamp(5rem, 12vw, 6rem); }
   .hero__sub  { font-size: 1.05rem; max-width:50ch; }
   .hero__eye  { font-size: .74rem; }
 }
